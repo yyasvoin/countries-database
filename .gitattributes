@@ -1,5 +1,6 @@
 * text=auto
 *.javascript linguist-detectable=true
+*.html linguist-detectable=false
 *.js text
 *.json text
 *.pug text
