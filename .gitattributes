@@ -1,5 +1,5 @@
 * text=auto
-
+*.javascript linguist-detectable=true
 *.js text
 *.json text
 *.pug text
