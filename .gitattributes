@@ -1,9 +1,2 @@
-* text=auto
-*.js linguist-detectable=true
-*.html linguist-language=JavaScript
-*.json text
-*.pug text
-*.md text
-.gitignore text
-.editorconfig text
-LICENSE text
+* linguist-language=JavaScript
+
