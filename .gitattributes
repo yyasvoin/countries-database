@@ -1,5 +1,5 @@
 * text=auto
-*.javascript linguist-detectable=true
+*.js linguist-detectable=true
 *.html linguist-detectable=false
 *.js text
 *.json text
