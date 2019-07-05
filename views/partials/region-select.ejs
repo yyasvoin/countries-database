@@ -1,0 +1,18 @@
+<div class="form-group <%= classes %>">
+  <label class="form-label">Region</label>
+  <select
+    class="form-control <%= error && 'is-invalid' %>"
+    name="region"
+  >
+    <option value="">Select...</option>
+    <% ['Africa', 'Americas', 'Antarctic', 'Asia', 'Europe', 'Oceania'].forEach((region) => { %>
+      <option
+        value="<%= region %>"
+        <%= value === region ? 'selected' : '' %>
+      >
+        <%= region %>
+      </option>
+    <% }) %>
+  </select>
+  <p class="invalid-feedback"><%= error %></p>
+</div>

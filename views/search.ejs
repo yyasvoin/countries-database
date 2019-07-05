@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); %>
+  </head>
+  <body>
+    <%- include('partials/header'); %>
+
+    <main>
+      <section class="container">
+        <form class="search-form" action="/search">
+          <div class="row">
+            <div class="form-group col-12 col-sm-3  ">
+              <label class="form-label">Name</label>
+              <input class="form-control" name="name" type="text" value="<%= formValues.name %>" />
+            </div>
+
+            <%-
+              include('partials/region-select', {
+                classes: 'col-12 col-sm-4',
+                value: formValues.region,
+                error: null,
+              })
+            %>
+
+            <div class="form-group col-12 col-sm-4">
+              <label class="form-label">Landlocked</label>
+              <select class="form-control" name="landlocked">
+                <option value="">Select...</option>
+                <option
+                  value="true"
+                  <%= formValues.landlocked === true ? 'selected' : '' %>
+                >
+                  True
+                </option>
+                <option
+                  value="false"
+                  <%= formValues.landlocked === false ? 'selected' : '' %>
+                >
+                  False
+                </option>
+              </select>
+            </div>
+
+            <div class="col-12 col-sm-1">
+              <button class="btn btn-info" type="submit">Search</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="container">
+        <table class="country-table table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Region</th>
+              <th>Landlocked</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% countries.forEach((country) => { %>
+              <tr>
+                <td><%= country.name %></td>
+                <td><%= country.region %></td>
+                <td>
+                  <img
+                    width="40"
+                    height="40"
+                    src="/static/<%= country.landlocked ? 'landlock-true.png' : 'landlock-false.png' %>"
+                    alt="<%= country.landlocked ? 'Is landlocked' : 'Is not landlocked' %>"
+                  />
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+
+          <tfoot>
+            <tr>
+              <td colspan="3">Total: <%= countries.length %></td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+    </main>
+
+    <%- include('partials/footer'); %>
+  </body>
+</html>

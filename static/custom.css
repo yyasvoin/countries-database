@@ -1,0 +1,109 @@
+html,
+body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+
+.navbar {
+  margin-bottom: 1.5rem;
+  background-color: #2e4057;
+}
+
+.navlink,
+.navbar h1 {
+  color: white;
+}
+
+.navbar h1 {
+  margin-bottom: 0;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.nav-item:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.nav-link {
+  color: #fff;
+  transition: color .2s linear;
+}
+
+.nav-link:hover {
+  color: #ccc;
+}
+
+.nav-link.active {
+  opacity: .6;
+  color: #aaa;
+}
+
+
+.main-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: #f1f1f1;
+}
+
+.main-footer a {
+  font-weight: bold;
+}
+
+
+.search-form {
+  align-items: center;
+  margin-top: 2rem;
+}
+
+
+.create-form-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+
+.country-table {
+  margin-bottom: 1rem;
+}
+
+.country-table tfoot td {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.country-table tfoot td:last-of-type {
+  text-align: right;
+}
+
+
+.http-error {
+  background-color: #e9ecef;
+}
+
+.http-error pre {
+  margin-top: 2rem;
+}
+
+
+.global-error:empty {
+  display: none;
+}
+
+.search-form {
+  margin-bottom: 1.5rem;
+}
+
+.search-form .col-12:last-of-type {
+  display: flex;
+  align-items: center;
+}

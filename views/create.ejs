@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <%- include('partials/head'); %>
+  </head>
+  <body>
+    <%- include('partials/header'); %>
+
+    <%# All our new stuff is between the header and footer %>
+
+    <div class="container">
+      <h1>Create Page</h1>
+      <form method="post" action="/create">
+        <p class="global-error text-danger"><%= formErrors.global %></p>
+
+        <div class="row">
+          <div class="form-group col-12 col-sm-6">
+            <label class="form-label">Name</label>
+            <input
+              class="form-control <%= formErrors.name && 'is-invalid' %>"
+              name="name"
+              type="text"
+              value="<%= formValues.name %>"
+            />
+            <p class="invalid-feedback"><%= formErrors.name %></p>
+          </div>
+
+          <%-
+            include('partials/region-select', {
+              classes: 'col-12 col-sm-6',
+              value: formValues.region,
+              error: formErrors.error,
+            })
+          %>
+
+          <div class="form-group col-12">
+            <div class="form-check">
+              <label class="form-check-label">
+                <input
+                  class="form-control form-check-input"
+                  name="landlocked"
+                  type="checkbox"
+                  value="on"
+                  <%= formValues.landlocked ? 'checked' : '' %>
+                />
+                Landlocked
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-success" type="submit">Submit</button>
+      </form>
+    </div>
+
+    <%# END %>
+
+    <%- include('partials/footer'); %>
+  </body>
+</html>
